@@ -1,9 +1,3 @@
-**Archived:** I unfortunately no longer make active use of this project
-and haven't properly maintained it since early 2022. I welcome anyone to
-fork and take over this project. 
-
------------------------------------------------------
-
 # gon - CLI and Go Library for macOS Notarization
 
 gon is a simple, no-frills tool for
@@ -450,6 +444,13 @@ experience.
 ### "We are unable to create an authentication session. (-22016)"
 
 You likely have Apple 2FA enabled. You'll need to [generate an application password](https://appleid.apple.com/account/manage) and use that instead of your Apple ID password.
+
+### Invalid error
+
+If you get an error from Apple that it is invalid, you will need to get more details with the following command:
+```bash
+xcrun notarytool log YOUR_JOB_ID --apple-id YOUR_APPLE_ID --team-id YOUR_TEAM_ID
+```
 
 ## Roadmap
 
