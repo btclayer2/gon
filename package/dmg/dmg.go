@@ -21,7 +21,7 @@ import (
 
 	"github.com/hashicorp/go-hclog"
 
-	"github.com/mitchellh/gon/internal/createdmg"
+	"github.com/btclayer2/gon/internal/createdmg"
 )
 
 // Options are the options for creating the dmg archive.
@@ -92,7 +92,7 @@ func Dmg(ctx context.Context, opts *Options) error {
 		args = append(args, "--add-file", filepath.Base(f), f, "0", "0")
 	}
 
-	args = append(args, "--app-drop-link",  "200", "5")
+	args = append(args, "--app-drop-link", "200", "5")
 
 	// Set our root directory. If one wasn't specified, we create an empty
 	// temporary directory to act as our root and we just use the flags to
